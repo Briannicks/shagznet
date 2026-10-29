@@ -2,6 +2,27 @@ import "dotenv/config";
 import AfricasTalking from "africastalking";
 import { GoogleGenAI } from "@google/genai";
 import { T, AI_LIMIT_PER_HOUR } from "./data.js";
+import "dotenv/config";
+import express from "express";
+import { T, MENUS, FUEL, AGROVETS, BATCHES, FLAG_THRESHOLD } from "./data.js";
+import {
+  languages,
+  reports,
+  stats,
+  tr,
+  normCode,
+  reportCount,
+  maskPhone,
+  makeRef,
+  cleanUssd,
+  navigate,
+  underAiLimit,
+  sendSms,
+  answerWithAI,
+} from "./services.js";
+
+const app = express();
+app.use(express.urlencoded({ extended: true }));
 
 const at = AfricasTalking({
   apiKey: process.env.AT_API_KEY || "missing",
@@ -89,28 +110,6 @@ export async function answerWithAI(phoneNumber, question, lang) {
     await sendSms(phoneNumber, T[lang].aiFail);
   }
 }
-
-import "dotenv/config";
-import express from "express";
-import { T, MENUS, FUEL, AGROVETS, BATCHES, FLAG_THRESHOLD } from "./data.js";
-import {
-  languages,
-  reports,
-  stats,
-  tr,
-  normCode,
-  reportCount,
-  maskPhone,
-  makeRef,
-  cleanUssd,
-  navigate,
-  underAiLimit,
-  sendSms,
-  answerWithAI,
-} from "./services.js";
-
-const app = express();
-app.use(express.urlencoded({ extended: true }));
 
 // ================= USSD =================
 app.post("/ussd", (req, res) => {
