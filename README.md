@@ -27,15 +27,3 @@ Dashboard: `https://YOUR-URL/admin` (add `?key=YOUR_ADMIN_KEY` if you set ADMIN_
 
 If Gemini gives a "model not found" error, set `GEMINI_MODEL=gemini-2.5-flash-lite` in `.env`.
 
-## Demo script for the judges (about 2 min)
-1. Dial, choose **1 → 2** to see the CAN price, then **1** to get it by SMS. Show the SMS arriving.
-2. Choose **5** and ask "How do I control fall armyworm?". The screen closes instantly and the answer arrives by SMS.
-3. Choose **9** and enter `DAPX99`. A FAKE warning appears. Then enter `DAP2026A01`, which shows as GENUINE.
-4. Choose **8** and report `NEWFAKE1` three times, then **9** and verify `NEWFAKE1`. It's now auto-flagged by the community.
-5. Open **/admin** to show live stats and masked reports.
-6. Choose **10** to switch to Kiswahili and walk through the menu again.
-
-Demo batch codes: `DAP2026A01`, `CAN2026B07`, `H61424118` (genuine) and `DAPX99` (fake).
-
-## Next steps
-Real database (reports and languages are currently stored in memory), live price feeds, KEPHIS/PCPB batch data, and extension officer review of flagged reports.
