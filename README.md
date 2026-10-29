@@ -1,4 +1,4 @@
-# KilimoRada 🌱 (*384*----#)
+# KilimoRada  (*384*----#)
 
 USSD + SMS farming hub for Kenyan farmers on any phone. No smartphone or internet needed.
 Built with Node.js, Express, Africa's Talking and Google Gemini.
@@ -18,7 +18,7 @@ Built with Node.js, Express, Africa's Talking and Google Gemini.
 npm install
 cp .env.example .env    # fill in your keys
 npm start
-npx ngrok http 3000     # or deploy to Render/Railway
+
 ```
 In the Africa's Talking sandbox, go to **USSD → Create channel** and set the callback URL to `https://YOUR-URL/ussd`.
 Test with the **AT Simulator**. SMS replies appear in the simulator's inbox.
